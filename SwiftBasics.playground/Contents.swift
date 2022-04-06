@@ -86,3 +86,19 @@ print("There is an error \(http404Error.0)")
 var vehicalBrand = (Bike:"BMW", Car:"Tesla")
 print(vehicalBrand.Bike)
 
+let num = "123"
+let converted = Int(num)
+
+// “If an optional has a value, it’s considered to be “not equal to” nil:”
+
+if converted != nil{
+    print("there is some value")
+}
+else{
+    print("No value")
+}
+
+//“Once you’re sure that the optional does contain a value, you can access its underlying value by adding an exclamation point (!) to the end of the optional’s name. The exclamation point effectively says, “I know that this optional definitely has a value; please use it.” This is known as forced unwrapping of the optional’s value:”
+if converted != nil{
+    print("there is some value \(converted!)")
+}
