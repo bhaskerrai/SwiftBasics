@@ -17,4 +17,72 @@ print(🥲)
  multip line comment
  */
 
+//“semicolons are required if you want to write multiple separate statements on a single line:”
+let pi = 3.142 ; print(pi)
+
+//“Swift provides signed and unsigned integers in 8, 16, 32, and 64 bit forms. These integers follow a naming convention similar to C, in that an 8-bit unsigned integer is of type UInt8, and a 32-bit signed integer is of type Int32.”
+
+//“You can access the minimum and maximum values of each integer type with its min and max properties:”
+
+let minValue = UInt8.min ; print(minValue)
+let maxValue = UInt8.max ; print(maxValue)
+let newVal = Int32.max ; print(newVal)
+
+//“Unless you need to work with a specific size of integer, always use Int for integer values in your code. ”
+
+//“Double represents a 64-bit floating-point number.
+//Float represents a 32-bit floating-point number.”
+
+/*
+Numeric Literals
+Integer literals can be written as:
+
+A decimal number, with no prefix
+A binary number, with a 0b prefix
+An octal number, with a 0o prefix
+A hexadecimal number, with a 0x prefix
+ */
+
+let a = 0b1101 //binary number
+let b = 0o21 //octal number
+let c = 0x11 //hexadecimal number
+
+//“Both integers and floats can be padded with extra zeros and can contain underscores to help with readability. Neither type of formatting affects the underlying value of the literal:”
+
+let oneMillion = 1_000_000; print(oneMillion)
+
+let y: Int = 789
+print(Float(y))
+
+//“Type aliases are useful when you want to refer to an existing type by a name that’s contextually more appropriate, such as when working with data of a specific size from an external source:”
+
+typealias calories = Int
+//“Once you define a type alias, you can use the alias anywhere you might use the original name:”
+var cal = calories.max
+print(cal)
+
+//tuple
+
+let http404Error = (404,"Not Found")
+print(http404Error)
+//You can decompose a tuple’s contents into separate constants or variables, which you then access as usual:
+
+let (statusCode, statusMessage) = http404Error
+print(statusCode,statusMessage)
+
+//“If you only need some of the tuple’s values, ignore parts of the tuple with an underscore (_) when you decompose the tuple:”
+
+let (code, _) = http404Error
+print(code)
+//“Alternatively, access the individual element values in a tuple using index numbers starting at zero:”
+
+print("Sorry!",http404Error.1)
+print("There is an error \(http404Error.0)")
+
+//“You can name the individual elements in a tuple when the tuple is defined:
+
+//let http200Status = (statusCode: 200, description: "OK")”
+
+var vehicalBrand = (Bike:"BMW", Car:"Tesla")
+print(vehicalBrand.Bike)
 
