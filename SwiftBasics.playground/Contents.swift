@@ -102,3 +102,50 @@ else{
 if converted != nil{
     print("there is some value \(converted!)")
 }
+
+var firstName: String = "Rahul "
+var lastName: String = "Burman"
+var middleName: String?
+middleName = "Dev"
+
+//print(middleName)
+print("\(middleName!)") //forced unwrapping
+
+//middleName = nil
+
+if middleName != nil{
+    print("\(firstName)\(middleName!) \(lastName)")
+}
+else{
+    print("\(firstName) \(lastName)")
+}
+
+//optional binding is saving an optional to a variable or constant and then using that variable or constant directly instead of unwrapping an optional.
+//“As the variable "middle" in the example below has been initialized with the value contained within the optional (middleName), so you don’t use the "!" suffix to access its value.”
+
+if let middle = middleName{
+    print("\(firstName)\(middle) \(lastName)") // "!" is omitted here.
+}
+else{
+    print("\(firstName) \(lastName)")
+}
+
+//“You can include as many optional bindings and Boolean conditions in a single if statement as you need to, separated by commas. If any of the values in the optional bindings are nil or any Boolean condition evaluates to false, the whole if statement’s condition is considered to be false. The following if statements are equivalent:
+
+if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+// Prints "4 < 42 < 100"
+
+if let firstNumber = Int("4") {
+    if let secondNumber = Int("42") {
+        if firstNumber < secondNumber && secondNumber < 100 {
+            print("\(firstNumber) < \(secondNumber) < 100")
+        }
+    }
+}
+// Prints "4 < 42 < 100”
+
+//“NOTE
+//Constants and variables created with optional binding in an if statement are available only within the body of the if statement. In contrast, the constants and variables created with a guard statement are available in the lines of code that follow the guard statement, as described in Early Exit.”
+
