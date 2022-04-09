@@ -147,3 +147,22 @@ if let firstNumber = Int("4") {
 //“NOTE
 //Constants and variables created with optional binding in an if statement are available only within the body of the if statement. In contrast, the constants and variables created with a guard statement are available in the lines of code that follow the guard statement, as described in Early Exit.”
 
+//Implicity Unwrapped Optionals:
+
+let possibleString: String? = "FREAKING OPTIONAL STRING." //optional string
+let forcedString: String = possibleString! // requires an exclamation point for unwrapping the value
+print(forcedString)
+
+let assumedString: String! = "Fuck the string!" //implicit optional string
+let implicitString: String = assumedString // no need for an exclamation point
+print(implicitString)
+//“An implicitly unwrapped optional is a normal optional behind the scenes, but can also be used like a non-optional value, without the need to unwrap the optional value each time it’s accessed. ”
+
+//“You can think of an implicitly unwrapped optional as giving permission for the optional to be force-unwrapped if needed. When you use an implicitly unwrapped optional value, Swift first tries to use it as an ordinary optional value; if it can’t be used as an optional, Swift force-unwraps the value. In the code above, the optional value assumedString is force-unwrapped before assigning its value to implicitString because implicitString has an explicit, non-optional type of String. In code below, optionalString doesn’t have an explicit type so it’s an ordinary optional.”
+let optionalString = assumedString
+print(optionalString!)
+
+//“Don’t use an implicitly unwrapped optional when there’s a possibility of a variable becoming nil at a later point. Always use a normal optional type if you need to check for a nil value during the lifetime of a variable.”
+//“You can check whether an implicitly unwrapped optional is nil the same way you check a normal optional, using if statement and optional binding.
+
+
