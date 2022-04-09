@@ -166,3 +166,17 @@ print(optionalString!)
 //“You can check whether an implicitly unwrapped optional is nil the same way you check a normal optional, using if statement and optional binding.
 
 
+
+
+//“Error Handling
+//You use error handling to respond to error conditions your program may encounter during execution.
+
+//When a function encounters an error condition, it throws an error. That function’s caller can then catch the error and respond appropriately.
+
+func canThrowAnError() throws {
+    // this function may or may not throw an error
+}
+
+//A function indicates that it can throw an error by including the throws keyword in its declaration. When you call a function that can throw an error, you add the try keyword to the expression.
+//Swift automatically propagates(transmit/pass) errors out of their current scope until they’re handled by a catch clause.”
+
