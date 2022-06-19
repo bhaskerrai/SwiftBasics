@@ -84,10 +84,23 @@ print("There is an error \(http404Error.0)")
 var vehicalBrand = (Bike:"BMW", Car:"Tesla")
 print(vehicalBrand.Bike)
 
+// “If an optional has a value, it’s considered to be “not equal to” nil:”
+
+var myStr : String? = "kk"
+
+if myStr != nil{
+    print("There was only one...")
+    print(myStr!) //forced unwrapping, more details are in following code...
+}
+
+else{
+    print(myStr)
+}
+
+
 let num = "123"
 let converted = Int(num)
 
-// “If an optional has a value, it’s considered to be “not equal to” nil:”
 
 if converted != nil{
     print("there is some value")
@@ -95,6 +108,8 @@ if converted != nil{
 else{
     print("No value")
 }
+
+
 
 //“Once you’re sure that the optional does contain a value, you can access its underlying value by adding an exclamation point (!) to the end of the optional’s name. The exclamation point effectively says, “I know that this optional definitely has a value; please use it.” This is known as forced unwrapping of the optional’s value:”
 if converted != nil{
@@ -180,3 +195,29 @@ func canThrowAnError() throws {
 //A function indicates that it can throw an error by including the throws keyword in its declaration. When you call a function that can throw an error, you add the try keyword to the expression.
 //Swift automatically propagates(transmit/pass) errors out of their current scope until they’re handled by a catch clause.”
 
+
+//Assertion and precondition
+
+
+//Assertion
+//let age = 0
+//assert(age>0, "Age cannot be zero")
+//
+//if age == 18{
+//    print("you are an adult")
+//}
+//
+//else if age < 18 && age > 0{
+//    print("Not and adult yet")
+//}
+//
+//else{
+//    assertionFailure("A person's age cant be zero!")
+//
+//}
+
+
+//Precondition
+let i = -3
+
+precondition(i>0,"must be greater than zero.")
